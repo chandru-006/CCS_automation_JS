@@ -1,0 +1,139 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - link "logo":
+          - /url: /
+          - img "logo" [ref=e7] [cursor=pointer]
+      - generic [ref=e8]:
+        - list [ref=e10]:
+          - paragraph [ref=e11]:
+            - strong [ref=e12]: For Backup Care
+            - link "Call 1-844-888-CARE (2273)" [ref=e13] [cursor=pointer]:
+              - /url: tel:18448882273
+              - text: 1-844-888-CARE (2273)
+          - listitem [ref=e14]:
+            - link "Facebook" [ref=e15] [cursor=pointer]:
+              - /url: https://www.facebook.com/pages/Corporate-CARE-Solutions/316593961702573
+              - generic [ref=e16]: 
+          - listitem [ref=e17]:
+            - link "X-Twitter" [ref=e18] [cursor=pointer]:
+              - /url: https://twitter.com/CCS4CARE
+              - generic [ref=e19]: 
+          - listitem [ref=e20]:
+            - link "LinkedIn" [ref=e21] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/9365219
+              - generic [ref=e22]: 
+          - listitem [ref=e23]:
+            - link "Instagram" [ref=e24] [cursor=pointer]:
+              - /url: https://www.instagram.com/corporatecaresolutions/
+              - generic [ref=e25]: 
+          - listitem [ref=e26]:
+            - link "Call 1-844-888-CARE (2273)" [ref=e27] [cursor=pointer]:
+              - /url: tel:18448882273
+              - generic [ref=e28]: 
+        - list [ref=e30]:
+          - listitem [ref=e31] [cursor=pointer]:
+            - link "Take Me Home" [ref=e32]:
+              - /url: /clients
+          - listitem [ref=e33] [cursor=pointer]:
+            - link "My Support" [ref=e34]:
+              - /url: "#"
+          - listitem [ref=e35] [cursor=pointer]:
+            - link "Log Out" [ref=e36]:
+              - /url: /users/logout
+  - main:
+    - generic [ref=e38]:
+      - heading "Hello, Test!" [level=1] [ref=e41]:
+        - text: Hello,
+        - link "Test!" [ref=e42] [cursor=pointer]:
+          - /url: /users/profile
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - heading "Child / Adult Care Days" [level=3] [ref=e48]
+            - img "Corporate Care Charts" [ref=e51]
+            - list [ref=e61]:
+              - listitem [ref=e62]:
+                - generic [ref=e63]:
+                  - paragraph [ref=e64]: "9"
+                  - paragraph [ref=e65]: Available
+              - listitem [ref=e66]:
+                - generic [ref=e68]:
+                  - paragraph [ref=e69]: "0"
+                  - paragraph [ref=e70]: Pending
+              - listitem [ref=e71]:
+                - link "1 Utilized" [ref=e73] [cursor=pointer]:
+                  - /url: /clients/history/01-01-2026/12-31-2026/2/utilized
+                  - paragraph [ref=e74]: "1"
+                  - paragraph [ref=e75]: Utilized
+              - listitem [ref=e76]:
+                - link "6 Confirmation Required" [ref=e78] [cursor=pointer]:
+                  - /url: /clients/request/completed
+                  - paragraph [ref=e79]: "6"
+                  - paragraph [ref=e80]: Confirmation Required
+            - generic [ref=e81] [cursor=pointer]: SUBMIT Child / Adult Care Request
+          - generic [ref=e82]:
+            - heading "Pet Care Days" [level=3] [ref=e83]
+            - img "Corporate Care Charts" [ref=e86]
+            - list [ref=e96]:
+              - listitem [ref=e97]:
+                - generic [ref=e98]:
+                  - paragraph [ref=e99]: "20"
+                  - paragraph [ref=e100]: Available
+              - listitem [ref=e101]:
+                - generic [ref=e103]:
+                  - paragraph [ref=e104]: "0"
+                  - paragraph [ref=e105]: Pending
+              - listitem [ref=e106]:
+                - generic [ref=e108]:
+                  - paragraph [ref=e109]: "0"
+                  - paragraph [ref=e110]: Utilized
+              - listitem [ref=e111]:
+                - generic [ref=e113]:
+                  - paragraph [ref=e114]: "0"
+                  - paragraph [ref=e115]: Confirmation Required
+            - generic [ref=e116] [cursor=pointer]: SUBMIT Pet Care Request
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - paragraph [ref=e121]: The EP Company
+              - generic [ref=e122]:
+                - heading "The EP Company HR Contact:" [level=4] [ref=e123]:
+                  - text: The EP Company
+                  - text: "HR Contact:"
+                - generic [ref=e124]:
+                  - text: ZXY The EP Company
+                  - link "mithun.y+1@sigmainfo.net" [ref=e125] [cursor=pointer]:
+                    - /url: mailto:mithun.y+1@sigmainfo.net
+                  - text: (898) 789-7987 ext. 8898
+            - generic [ref=e126]:
+              - generic [ref=e127]:
+                - heading "My CCS Sticky Notes" [level=3] [ref=e128]
+                - generic [ref=e129]:
+                  - generic [ref=e130]:
+                    - link "Add" [ref=e131] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                      - generic [ref=e132]: 
+                    - generic [ref=e133]: Add
+                  - generic [ref=e134]:
+                    - link "Edit" [ref=e135] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                      - generic [ref=e136]: 
+                    - generic [ref=e137]: Edit
+                  - generic [ref=e138]:
+                    - link "View" [ref=e139] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                      - generic [ref=e140]: 
+                    - generic [ref=e141]: View
+              - generic [ref=e143]:
+                - generic [ref=e145]: 10/09/2025
+                - paragraph [ref=e146]: 12/22/22 dsvsdvdv 223/323//23 dssdvsdvsdv 23/33/33 sdfsdfsdfsdfsdfsfsdffdf
+        - generic:
+          - generic:
+            - generic [ref=e147]:
+              - generic:      
+            - generic:  
+```

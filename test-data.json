@@ -1,0 +1,10 @@
+{
+  "employee": {
+    "username": "Unknown",
+    "password": "1234"
+  },
+  "provider": {
+    "username": "EPCareProvider",
+    "password": "corp@care"
+  }
+}
