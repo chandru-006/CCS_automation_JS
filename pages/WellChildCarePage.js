@@ -9,11 +9,11 @@ export class WellChildCarePage {
   }
 
   async selectWellChildCare() {
+    await this.page.waitForTimeout(2000);
     await this.page.locator('#care_type_child_adult').click();
-
+    await expect(this.page.locator('#well_child_care')).toBeAttached();
     await this.page.locator('#well_child_care').click();
 
-    await this.page.locator('#in_network').click();
   }
 
   async fillCareDetails() {
@@ -25,7 +25,7 @@ export class WellChildCarePage {
 
     await this.page.locator('#is_other_than_dependents_home3').check();
     await this.page.locator('#is_distance_learning_needed3').check();
-
+    await this.page.locator('#locations_439').check();
     await this.page.locator('#has_pet_no').check();
     await this.page.locator('#other_service_worker_available_no_first').check();
     await this.page.getByText('Either').click();
