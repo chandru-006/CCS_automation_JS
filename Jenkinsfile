@@ -24,20 +24,21 @@ pipeline {
   }
 
   post {
-    always {
-      allure([
-        includeProperties: false,
-        jdk: '',
-        results: [[path: 'allure-results']]
-      ])
-    }
+  always {
+    allure([
+      commandline: 'allure-2.27.0',
+      includeProperties: false,
+      jdk: '',
+      results: [[path: 'allure-results']]
+    ])
+  }
 
-    failure {
-      echo '❌ Tests failed'
-    }
+  failure {
+    echo '❌ Tests failed'
+  }
 
-    success {
-      echo '✅ Tests passed'
-    }
+  success {
+    echo '✅ Tests passed'
   }
 }
+
