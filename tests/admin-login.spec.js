@@ -25,7 +25,6 @@ test.describe('Admin Login - Critical User Flows', () => {
     const form = page.locator(LOGIN_FORM_SELECTOR);
     const emailInput = page.locator(USERNAME_SELECTOR);
     const passwordInput = page.locator(PASSWORD_SELECTOR);
-
     await expect(form).toBeVisible();
     await expect(emailInput).toBeVisible();
     await expect(passwordInput).toBeVisible();

@@ -1,15 +1,13 @@
-const baseDate = new Date();
-baseDate.setDate(baseDate.getDate() + 1);
-let dateOffset = 1;
+export function getRandomFutureDateWithin30Days() {
+  const today = new Date();
 
-export function getNextFutureDate() {
-  const next = new Date(baseDate);
-  next.setDate(baseDate.getDate() + dateOffset);
-  dateOffset++;
+  const randomOffset = Math.floor(Math.random() * 30) + 1; // 1–30 days
+  const futureDate = new Date(today);
+  futureDate.setDate(today.getDate() + randomOffset);
 
-  const mm = String(next.getMonth() + 1).padStart(2, '0');
-  const dd = String(next.getDate()).padStart(2, '0');
-  const yyyy = next.getFullYear();
+  const mm = String(futureDate.getMonth() + 1).padStart(2, '0');
+  const dd = String(futureDate.getDate()).padStart(2, '0');
+  const yyyy = futureDate.getFullYear();
 
   return `${mm}/${dd}/${yyyy}`;
 }

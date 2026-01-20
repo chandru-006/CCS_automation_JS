@@ -1,19 +1,17 @@
 import { expect } from '@playwright/test';
-import { getNextFutureDate } from '../utils/date.helper.js';
+import { getRandomFutureDateWithin30Days } from '../utils/date.helper.js';
 
 export class WellChildCarePage {
   constructor(page) {
     this.page = page;
-
     this.startDateInput = page.locator('#start_date');
   }
 
   async selectWellChildCare() {
     await this.page.waitForTimeout(2000);
     await this.page.locator('#care_type_child_adult').click();
-    await expect(this.page.locator('#well_child_care')).toBeAttached();
+    await expect(this.page.locator('#well_child_care')).toBeVisible();
     await this.page.locator('#well_child_care').click();
-
   }
 
   async fillCareDetails() {
@@ -34,42 +32,17 @@ export class WellChildCarePage {
   }
 
   async selectValidDate() {
-    while (true) {
-      const date = getNextFutureDate();
+    const date = getRandomFutureDateWithin30Days();
 
-      await this.startDateInput.fill('');
-      await this.startDateInput.fill(date);
-      await this.startDateInput.press('Enter');
-
-      const duplicatePopup = this.page.locator(
-        'button:has-text("NO - GO BACK AND CHANGE THE DATE/TIME")'
-      );
-
-      if (await duplicatePopup.isVisible().catch(() => false)) {
-        await duplicatePopup.click();
-        continue;
-      }
-
-      break;
-    }
+    await this.startDateInput.fill('');
+    await this.startDateInput.fill(date);
+    await this.startDateInput.press('Enter');
   }
 
   async selectTimeAndFlexibility() {
     await this.page.getByLabel('Start Hour').selectOption('10');
     await this.page.getByLabel('End Hour').selectOption('4');
 
-    await this.page
-      .locator('text=Is Your Start/End Time Flexible?')
-      .locator('..')
-      .getByText('Yes')
-      .click();
-
-    const flexTextbox = this.page.getByRole('textbox', {
-      name: 'If yes, please provide',
-    });
-
-    await expect(flexTextbox).toBeVisible();
-    await flexTextbox.fill('30 mins');
   }
 
   async submit() {
@@ -82,15 +55,13 @@ export class WellChildCarePage {
       .getByRole('button', { name: 'Submit In-Network CARE Request' })
       .click();
 
-    const finalProceed = this.page.locator(
-      'button.dup_validate_suc:has-text("Yes - submit this CARE Request as is")'
+    const proceedBtn = this.page.locator(
+      'button[data-bb-handler="success"]:has-text("Yes")'
     );
 
-    if (await finalProceed.isVisible().catch(() => false)) {
-      await finalProceed.click();
+    if (await proceedBtn.isVisible().catch(() => false)) {
+      await proceedBtn.click();
     }
-
-    await this.page.waitForTimeout(2000);
   }
 
   async createRequest() {

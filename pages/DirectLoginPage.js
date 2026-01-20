@@ -3,7 +3,6 @@ import { expect } from '@playwright/test';
 export class DirectLoginPage {
   constructor(page) {
     this.page = page;
-
     this.usernameInput = page.locator('#username');
     this.passwordInput = page.locator('#password');
     this.loginButton = page.locator('button.cc-btn');

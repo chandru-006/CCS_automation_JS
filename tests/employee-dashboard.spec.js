@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 import { DirectLoginPage } from '../pages/DirectLoginPage.js';
 import { EmployeeHomePage } from '../pages/EmployeeHomePage.js';
+import { before } from 'node:test';
 
 const EMPLOYEE_USERNAME = 'Unknown';
 const EMPLOYEE_PASSWORD = '1234';
-
 test.beforeEach(async ({ page }) => {
   const login = new DirectLoginPage(page);
   const home = new EmployeeHomePage(page);
 
   await login.goto();
-  await login.login(EMPLOYEE_USERNAME, EMPLOYEE_PASSWORD);
+  await login.login(EMPLOYEE_USERNAME, EMPLOYEE_PASSWORD); 
   await home.waitForHome();
 });
 
