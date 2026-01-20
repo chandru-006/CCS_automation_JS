@@ -144,15 +144,11 @@ test.describe('Admin Login - Error Handling', () => {
     const emailInput = page.locator(USERNAME_SELECTOR);
     const passwordInput = page.locator(PASSWORD_SELECTOR);
     const submitButton = page.locator(SUBMIT_BUTTON_SELECTOR);
-
     await emailInput.fill('notanemail');
     await passwordInput.fill('password');
     await submitButton.click();
-
     await page.waitForTimeout(1000);
-
     const modal = page.locator('.modal-content');
-
     await expect(modal).toBeVisible();
     await expect(modal.locator('#ccs-server-error')).toHaveText('Attention!');
     await expect(modal.locator('.cc-error-message')).toHaveText(
