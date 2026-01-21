@@ -23,6 +23,7 @@ test.describe.serial('Well Child Care – End to End Sequential Flow', () => {
 
     await home.waitForHome();
     await wellChildCare.createRequest();
+    await page.waitForTimeout(5000);
   });
 
   test('TC-WCC-002 | Employee cancels Well Child Care request', async ({ page }) => {
@@ -48,6 +49,8 @@ test.describe.serial('Well Child Care – End to End Sequential Flow', () => {
 
     await employeeHome.waitForHome();
     await wellChildCare.createRequest();
+    await page.waitForTimeout(5000);
+
   });
 
   test('TC-WCC-CP-001 | Care Provider Approval', async ({ page }) => {
