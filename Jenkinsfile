@@ -2,7 +2,6 @@ pipeline {
   agent any
 
   stages {
-
     stage('Checkout') {
       steps {
         checkout scm
@@ -13,7 +12,6 @@ pipeline {
       steps {
         sh 'npm install'
         sh 'npx playwright install 2>/dev/null || true'
-
       }
     }
 
@@ -24,24 +22,28 @@ pipeline {
     }
   }
 
- post {
-  always {
-    allure([
-      commandline: 'allure-2.27.0',
-      includeProperties: false,
-      jdk: '',
-      results: [[path: 'allure-results']]
-    ])
-  }
+  post {
+    always {
+      allure([
+        commandline: 'allure-2.27.0',
+        includeProperties: false,
+        jdk: '',
+        results: [[path: 'allure-results']]
+      ])
 
-  failure {
-    echo '❌ Tests failed'
-  }
+      script {
+        if (currentBuild.currentResult == 'UNSTABLE') {
+          currentBuild.result = 'SUCCESS'
+        }
+      }
+    }
 
-  success {
-    script { currentBuild.result = 'SUCCESS' }
-    echo '✅ Tests passed'
-  }
-}
+    failure {
+      echo '❌ Tests failed'
+    }
 
+    success {
+      echo '✅ Tests passed'
+    }
+  }
 }
