@@ -49,7 +49,7 @@ export class WellChildCarePage {
     await this.page.locator('#acknowledge_cc2').check();
     await this.page.locator('#acknowledge_cr').click();
     await this.page.getByRole('button', { name: 'Submit In-Network CARE Request' }).click();
-    await this.page.waitForTimeout(5000);
+    await this.page.waitForTimeout(7000);
     const proceedBtn = this.page.locator(
       'button[data-bb-handler="success"]:has-text("Yes")'
     );
