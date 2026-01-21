@@ -42,7 +42,7 @@ export class WellChildCarePage {
   async selectTimeAndFlexibility() {
     await this.page.getByLabel('Start Hour').selectOption('10');
     await this.page.getByLabel('End Hour').selectOption('4');
-
+    await this.page.locator('#is_start_end_time_flexible3').check();
   }
 
   async submit() {
