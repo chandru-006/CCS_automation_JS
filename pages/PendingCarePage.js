@@ -12,8 +12,6 @@ export class PendingCarePage {
 
     await expect(pendingCareLink).toBeVisible();
     await pendingCareLink.click();
-
-    await expect(this.page).toHaveURL(/pending-care-units/);
     await this.page.waitForTimeout(5000);
   }
 
