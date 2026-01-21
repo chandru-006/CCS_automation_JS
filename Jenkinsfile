@@ -8,6 +8,12 @@ pipeline {
       }
     }
 
+    stage('Clean Old Reports') {
+      steps {
+        sh 'rm -rf allure-results allure-report'
+      }
+    }
+
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
@@ -24,13 +30,6 @@ pipeline {
 
   post {
     always {
-      script {
-        if (currentBuild.currentResult == 'UNSTABLE') {
-          echo '⚠️ Normalizing UNSTABLE → SUCCESS'
-          currentBuild.result = 'SUCCESS'
-        }
-      }
-
       allure([
         commandline: 'allure-2.27.0',
         includeProperties: false,
