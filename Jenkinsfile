@@ -2,15 +2,10 @@ pipeline {
   agent any
 
   stages {
+
     stage('Checkout') {
       steps {
         checkout scm
-      }
-    }
-
-    stage('Clean Old Reports') {
-      steps {
-        sh 'rm -rf allure-results allure-report'
       }
     }
 
@@ -18,6 +13,12 @@ pipeline {
       steps {
         sh 'npm install'
         sh 'npx playwright install 2>/dev/null || true'
+      }
+    }
+
+    stage('Clean Allure Results') {
+      steps {
+        sh 'rm -rf allure-results allure-report'
       }
     }
 
