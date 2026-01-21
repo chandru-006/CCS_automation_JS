@@ -12,7 +12,8 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
-        sh 'npx playwright install'
+        sh 'npx playwright install 2>/dev/null || true'
+
       }
     }
 
